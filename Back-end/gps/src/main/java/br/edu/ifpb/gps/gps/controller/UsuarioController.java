@@ -41,8 +41,10 @@ public class UsuarioController {
     public Usuario putUsuario(@PathVariable long id, @RequestBody Usuario usuario) {
         Usuario usuarioDoBanco = repository.findById(id).get();
         usuarioDoBanco.setNome(usuario.getNome());
-        usuarioDoBanco.setIdade(usuario.getIdade());
-        usuarioDoBanco.setEmail(usuario.getEmail());
+        usuarioDoBanco.setCpf(usuario.getCpf());
+        usuarioDoBanco.setTelefone(usuario.getTelefone());
+        usuarioDoBanco.setEndereco(usuario.getEndereco());
+        usuarioDoBanco.setEmail(usuarioDoBanco.getEmail());
         usuarioDoBanco.setSenha(usuario.getSenha());
         return repository.save(usuarioDoBanco);
     }
