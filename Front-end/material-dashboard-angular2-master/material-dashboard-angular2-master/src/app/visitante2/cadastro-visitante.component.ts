@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Visitante } from 'app/interface/visitante';
+import { AlertasService } from 'app/service/alertas.service';
 import { VisitanteService } from 'app/service/visitante.service';
 
 @Component({
@@ -26,7 +27,8 @@ export class UserProfileComponent implements OnInit {
   constructor(
     private router: Router,
     private visitanteService: VisitanteService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alertaService: AlertasService
   ) { }
 
   ngOnInit(): void {
@@ -47,7 +49,7 @@ export class UserProfileComponent implements OnInit {
         console.log(error);
       });
     }
-  }
+  } 
 
   enviar() {
     const visitante: Visitante = this.formulario.value as Visitante;
@@ -55,16 +57,19 @@ export class UserProfileComponent implements OnInit {
     if (this.idVisitante) {
       visitante.id = this.idVisitante;
       this.visitanteService.atualizar(visitante).subscribe(() => {
-        console.log("atualizado");
+        this.alertaService.alertaSucesso("Visitante atualizado");
+        this.router.navigate(['/table-list']);
       })
       return;
     }
 
     this.visitanteService.inserir(visitante).subscribe(() => {
-      console.log("visitante cadastrado com sucesso!");
+      this.alertaService.alertaSucesso("Visitante cadastrado");
+      this.router.navigate(['/table-list']);
     }, (error) => {
       console.log(error);
     });
+    
   }
 
 }

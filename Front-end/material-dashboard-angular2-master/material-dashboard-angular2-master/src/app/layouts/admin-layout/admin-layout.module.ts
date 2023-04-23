@@ -35,7 +35,7 @@ import { VisitanteModule } from 'app/visitante2/visitante.module';
   ],
   declarations: [
     DashboardComponent,
-    TableListComponent,
+    // TableListComponent,
     TypographyComponent,
     IconsComponent,
     MapsComponent,
