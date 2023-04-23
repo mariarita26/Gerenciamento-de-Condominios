@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Visitante } from 'app/interface/visitante';
 import { environment } from 'environments/environment';
-import { take } from 'rxjs';
+import { Observable, take } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -25,13 +25,11 @@ export class VisitanteService {
     return this.http.post<Visitante>(this.URL_visitantes, novoVisitante);
   }
 
-  inserir2(novoVisitante: any) {
-    return this.http.post(this.URL_visitantes, novoVisitante).pipe(take(1));
-  }
-
   buscarVisitantePorId(id: number) {
     return this.http.get<Visitante>(`${this.URL_visitantes}/${id}`);
   }
 
-
+  excluirVisitante(id: number | undefined): Observable<object>{
+    return this.http.delete(`${this.URL_visitantes}/${id}`);
+  }
 }

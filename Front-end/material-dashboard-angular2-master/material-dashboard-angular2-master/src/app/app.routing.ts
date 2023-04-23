@@ -4,7 +4,6 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { CadastroVisitanteComponent } from './visitante/cadastro-visitante/cadastro-visitante.component';
 
 const routes: Routes =[
   {
@@ -20,9 +19,6 @@ const routes: Routes =[
       loadChildren: () => import('./layouts/admin-layout/admin-layout.module').then(m => m.AdminLayoutModule)
     }]
   },
-  {
-    path: 'visitante', component: CadastroVisitanteComponent
-  }
 ];
 
 @NgModule({
