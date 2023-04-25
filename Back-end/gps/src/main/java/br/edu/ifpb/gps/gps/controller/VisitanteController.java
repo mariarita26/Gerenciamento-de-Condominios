@@ -2,7 +2,6 @@ package br.edu.ifpb.gps.gps.controller;
 
 import br.edu.ifpb.gps.gps.model.Visitante;
 import br.edu.ifpb.gps.gps.repository.VisitanteRepository;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
