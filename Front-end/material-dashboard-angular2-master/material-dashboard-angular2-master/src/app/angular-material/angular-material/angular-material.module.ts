@@ -6,7 +6,7 @@ import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatTableModule } from '@angular/material/table';
+// import { MatTableModule } from '@angular/material/table';
 import {MatMenuModule} from '@angular/material/menu';
 
 
@@ -21,7 +21,7 @@ import {MatMenuModule} from '@angular/material/menu';
     MatCardModule,
     MatIconModule,
     MatToolbarModule,
-    MatTableModule,
+    // MatTableModule,
     MatInputModule,
     MatMenuModule
   ],
@@ -32,7 +32,7 @@ import {MatMenuModule} from '@angular/material/menu';
     MatCardModule,
     MatIconModule,
     MatToolbarModule,
-    MatTableModule,
+    // MatTableModule,
     MatMenuModule
   ]
 })
