@@ -3,7 +3,7 @@
       <div class="row">
           <div class="col-md-12">
               <div class="card">
-                  <div class="card-header card-header-danger">
+                  <div class="card-header" id="header">
                       <h4 class="card-title">Cadastrar Visitante</h4>
                   </div>
                   <div class="card-body">
@@ -57,9 +57,10 @@
                                  </mat-form-field>
                               </div>
                           </div>
-                          
-                          <button mat-raised-button type="submit"  [routerLink]="['/table-list']" class="btn pull-right">Cancelar</button>
-                          <button mat-raised-button type="submit" class="btn btn-danger pull-right">Salvar</button>
+
+                          <button mat-raised-button type="submit" class="btn btn-sm pull-right" id="salvar">Salvar</button>
+                          <button mat-raised-button type="submit"  [routerLink]="['/table-list']" class="btn btn-sm pull-right" id="cancelar">Cancelar</button>
+
                           <div class="clearfix"></div>
                       </form>
                   </div>

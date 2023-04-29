@@ -10,6 +10,8 @@ import { NotificationsComponent } from '../../notifications/notifications.compon
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { ResidenteReadComponent } from 'app/components/residente/residente-read/residente-read.component';
 import { ResidenteCreateComponent } from 'app/components/residente/residente-create/residente-create.component';
+import { PorteiroCreateComponent } from 'app/components/porteiro/porteiro-create/porteiro-create.component';
+import { PorteiroReadComponent } from 'app/components/porteiro/porteiro-read/porteiro-read.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
@@ -22,6 +24,10 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'upgrade',        component: UpgradeComponent },
     { path: 'visitantes/editar/:id', component: UserProfileComponent},
     // { path: 'residentes',     component: ResidenteReadComponent},
-    { path: 'residentes', component: ResidenteCreateComponent},
-    { path: 'residentes/editar', component: ResidenteReadComponent}
+    { path: 'residentes',     component: ResidenteCreateComponent},
+    { path: 'residentes/editar/:id', component: ResidenteCreateComponent},
+    { path: 'residentes/list', component: ResidenteReadComponent},
+    { path: 'porteiros',      component: PorteiroCreateComponent},
+    { path: 'porteiros/editar/:id', component: PorteiroCreateComponent},
+    { path: 'porteiros/list', component: PorteiroReadComponent}
 ];

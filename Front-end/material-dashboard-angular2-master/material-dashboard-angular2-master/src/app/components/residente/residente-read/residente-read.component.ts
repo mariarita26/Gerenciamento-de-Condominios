@@ -32,7 +32,7 @@ export class ResidenteReadComponent implements OnInit {
 
   deletar(id: number) {
     if (id) {
-      this.residenteService.delete(id).subscribe(() => {
+      this.residenteService.excluirResidente(id).subscribe(() => {
         const index = this.residentes.findIndex( c => c.id === id);
         if (index > -1) {
           this.residentes.splice(index, 1);

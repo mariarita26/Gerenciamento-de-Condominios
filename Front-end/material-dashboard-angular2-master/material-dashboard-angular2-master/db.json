@@ -19,7 +19,7 @@
       "id": 3
     },
     {
-      "nome": "",
+      "nome": "mariaaa",
       "cpf": "",
       "telefone": "",
       "endereco": "",
@@ -30,84 +30,29 @@
   ],
   "residentes": [
     {
-      "nome": "maria",
-      "cpf": "1112",
-      "telefone": "8399910",
-      "endereco": "rua comen",
-      "bloco": "A",
-      "id": 1
-    },
-    {
-      "nome": "aaaa",
-      "cpf": "aaa",
-      "telefone": "aaa",
-      "endereco": "aaa",
-      "bloco": "",
-      "id": 2
-    },
-    {
-      "nome": "aaa",
-      "cpf": "aaaa",
-      "telefone": "aaaa",
-      "endereco": "aaa",
-      "bloco": "aaaa",
-      "id": 3
-    },
-    {
-      "nome": "",
-      "cpf": "",
+      "nome": "pls",
+      "cpf": "12222",
       "telefone": "",
-      "endereco": "",
-      "bloco": "",
+      "endereco": "obrigada",
+      "bloco": "finalmente caralhooo",
       "id": 4
     },
     {
-      "nome": "aa",
-      "cpf": "",
+      "nome": "Antônio",
+      "cpf": "122536333",
       "telefone": "",
-      "endereco": "",
+      "endereco": "aaaaaaa",
       "bloco": "",
       "id": 5
-    },
+    }
+  ],
+  "porteiros": [
     {
-      "nome": "",
-      "cpf": "",
+      "nome": "maria rita ",
+      "cpf": "11222",
       "telefone": "",
       "endereco": "",
-      "bloco": "",
-      "id": 6
-    },
-    {
-      "nome": "",
-      "cpf": "",
-      "telefone": "",
-      "endereco": "",
-      "bloco": "",
-      "id": 7
-    },
-    {
-      "nome": "",
-      "cpf": "",
-      "telefone": "",
-      "endereco": "",
-      "bloco": "",
-      "id": 8
-    },
-    {
-      "nome": "",
-      "cpf": "",
-      "telefone": "",
-      "endereco": "",
-      "bloco": "",
-      "id": 9
-    },
-    {
-      "nome": "",
-      "cpf": "",
-      "telefone": "",
-      "endereco": "",
-      "bloco": "",
-      "id": 10
+      "id": 1
     }
   ]
 }

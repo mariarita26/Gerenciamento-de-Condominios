@@ -1,38 +1,34 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Porteiro } from 'app/interface/porteiro';
-import { environment } from 'environments/environment';
-import { Observable } from 'rxjs';
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { Porteiro } from "app/interface/porteiro";
+import { environment } from "environments/environment";
+import { Observable } from "rxjs";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class PorteiroService {
+  private readonly URL_porteiros = `${environment.API}/porteiros`;
 
-  constructor(
-		private http: HttpClient,
-	) { }
+  constructor(private http: HttpClient) {}
 
-	getAll(): Observable<Porteiro[]> {
-		return this.http.get<Porteiro[]>(`${environment.API}/porteiros`);
-	}
+  getAll(): Observable<Porteiro[]> {
+    return this.http.get<Porteiro[]>(`${environment.API}/porteiros`);
+  }
 
-	create(porteiro: Porteiro): Observable<Porteiro> {
-		return this.http.post<Porteiro>(`${environment.API}/porteiros`, porteiro);
-	}
+  create(porteiro: Porteiro): Observable<Porteiro> {
+    return this.http.post<Porteiro>(`${environment.API}/porteiros`, porteiro);
+  }
 
-	update(porteiro: Porteiro): Observable<Porteiro> {
-		const url = `${environment.API}porteiros/${porteiro.id}`;
-		return this.http.put<Porteiro>(url, porteiro);
-	}
+  excluirPorteiro(id: number | undefined): Observable<object> {
+    return this.http.delete(`${this.URL_porteiros}/${id}`);
+  }
 
-	readById(id: number): Observable<Porteiro> {
-		const url = `${environment.API}porteiros/${id}`;
-		return this.http.get<Porteiro>(url);
-	}
+  atualizar(porteiro: Porteiro) {
+    return this.http.put(`${this.URL_porteiros}/${porteiro.id}`, porteiro);
+  }
 
-	delete(id: number): Observable<Porteiro> {
-		const url = `${environment.API}porteiros/${id}`;
-		return this.http.delete<Porteiro>(url);
-	}
+  buscarPorteiroPorId(id: number) {
+    return this.http.get<Porteiro>(`${this.URL_porteiros}/${id}`);
+  }
 }

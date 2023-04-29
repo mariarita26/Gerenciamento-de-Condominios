@@ -36,7 +36,7 @@ export class ResidenteCreateComponent implements OnInit {
     this.idResidente = Number(this.route.snapshot.paramMap.get('id'));
 
     if (this.idResidente !== 0){
-      this.residenteService.readById(this.idResidente).subscribe((residente: Residente) => {
+      this.residenteService.buscarResidentePorId(this.idResidente).subscribe((residente: Residente) => {
         this.formulario.setValue({
           nome: residente.nome,
           cpf: residente.cpf,
@@ -55,16 +55,16 @@ export class ResidenteCreateComponent implements OnInit {
 
     if (this.idResidente) {
       residente.id = this.idResidente;
-      this.residenteService.update(residente).subscribe(() => {
+      this.residenteService.atualizar(residente).subscribe(() => {
         this.alertaService.alertaSucesso("Residente atualizado");
-        this.router.navigate(['residentes/editar']);
+        this.router.navigate(['residentes/list']);
       })
       return;
     }
 
     this.residenteService.create(residente).subscribe(() => {
       this.alertaService.alertaSucesso("Residente cadastrado");
-      this.router.navigate(['residentes/editar']);
+      this.router.navigate(['residentes/list']);
     }, (error) => {
       console.log(error);
     });

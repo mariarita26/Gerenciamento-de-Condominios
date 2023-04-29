@@ -3,8 +3,10 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header card-header-danger">
-                        <h4 class="card-title ">Residentes Cadastrados</h4>
+                    <div class="card-header" id="header">
+                        <h4 class="card-title ">Moradores
+                            <button mat-raised-button type="submit" [routerLink]="['/residentes']" id="cadastrar" class="btn btn-sm pull-right">Cadastrar</button>
+                        </h4>
                     </div>
                     <div class="card-body">
               
@@ -30,8 +32,9 @@
                                         <td> {{ residente.casa }} </td>
                                         <td> {{ residente.bloco }} </td>
                                         <td> {{ residente.numero }} </td>
-                                        <td> <button mat-icon-button [routerLink]="['/residentes/editar/',residente.id]"><mat-icon>edit</mat-icon> </button> 
-                                         <button mat-icon-button (click)="deletar(residente.id)"> <mat-icon>delete</mat-icon> </button></td>
+                                        <td> <button mat-raised-button type="submit" id="editar" [routerLink]="['/residentes/editar/',residente.id]" class="btn btn-sm pull-right">Editar</button>
+                                            <button mat-raised-button type="submit"  id="deletar" (click)="deletar(residente.id)" class="btn btn-sm pull-right">Deletar</button> 
+                                        </td>
                                     </tr>
                                 </tbody>  
                             </table>
