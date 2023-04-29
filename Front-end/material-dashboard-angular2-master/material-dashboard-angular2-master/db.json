@@ -17,6 +17,51 @@
       "veiculo": "teste",
       "placa": "teste",
       "id": 2
+    },
+    {
+      "nome": "Valquinho ",
+      "cpf": "112.856.856-96",
+      "telefone": "(83)99652-8563",
+      "endereco": "Rua da Areia, 56",
+      "veiculo": "Fusca",
+      "placa": "ABC-123",
+      "id": 3
+    },
+    {
+      "nome": "mariaaa",
+      "cpf": "",
+      "telefone": "",
+      "endereco": "",
+      "veiculo": "",
+      "placa": "",
+      "id": 4
+    }
+  ],
+  "residentes": [
+    {
+      "nome": "pls",
+      "cpf": "12222",
+      "telefone": "",
+      "endereco": "obrigada",
+      "bloco": "finalmente caralhooo",
+      "id": 4
+    },
+    {
+      "nome": "Antônio",
+      "cpf": "122536333",
+      "telefone": "",
+      "endereco": "aaaaaaa",
+      "bloco": "",
+      "id": 5
+    }
+  ],
+  "porteiros": [
+    {
+      "nome": "maria rita ",
+      "cpf": "11222",
+      "telefone": "",
+      "endereco": "",
+      "id": 1
     }
   ]
 }

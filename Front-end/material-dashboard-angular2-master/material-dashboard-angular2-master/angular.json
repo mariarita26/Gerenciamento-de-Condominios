@@ -123,7 +123,9 @@
             "styles": [
               "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
               "src/assets/scss/material-dashboard.scss",
-              "src/assets/css/demo.css"
+              "src/assets/css/demo.css",
+              "src/assets/fonts/roboto.scss",
+              "src/assets/fonts/material-icons.scss"
             ],
             "assets": [
               "src/assets",
