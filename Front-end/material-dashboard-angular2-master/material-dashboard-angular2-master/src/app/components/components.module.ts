@@ -11,9 +11,19 @@ import { ResidenteUpdateComponent } from "./residente/residente-update/residente
 import { ResidenteDeleteComponent } from "./residente/residente-delete/residente-delete.component";
 import { MatTableModule } from "@angular/material/table";
 import { ResidenteReadComponent } from "./residente/residente-read/residente-read.component";
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+
 
 @NgModule({
-  imports: [CommonModule, RouterModule, MatTableModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    MatTableModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
   declarations: [
     FooterComponent,
     NavbarComponent,

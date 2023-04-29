@@ -1,6 +1,6 @@
 import { Pessoa } from "./pessoa";
 
 export interface Usuario extends Pessoa{
-    perfil: String;
-    senha: String;
+    perfil: string;
+    senha: string;
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Residente } from "app/interface/residente";
+import { AlertasService } from "app/service/alertas.service";
 import { ResidenteService } from "app/service/residente.service";
 
 @Component({
@@ -12,33 +12,34 @@ import { ResidenteService } from "app/service/residente.service";
 export class ResidenteReadComponent implements OnInit {
   residentes: Residente[];
 
-  displayedColumns = ['nome', 'telefone', 'bloco', 'numero', 'action'];
-
-  formulario = new FormGroup({
-    nome: new FormControl("", Validators.required),
-    cpf: new FormControl("", Validators.required),
-    telefone: new FormControl(""),
-    endereco: new FormControl(""),
-    // perfil: new FormControl(''),
-    // senha: new FormControl(''),
-    casa: new FormControl("", Validators.required),
-    bloco: new FormControl("", Validators.required),
-    numero: new FormControl("", Validators.required),
-  });
+  displayedColumns = ['id','nome', 'cpf', 'telefone', 'endereco', 'casa', 'bloco', 'numero'];
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute,
-    private residenteService: ResidenteService
-  ) {}
+    private residenteService: ResidenteService,
+    private alertaService: AlertasService
+  ) { }
 
-  ngOnInit(): void {
-    this.residenteService.getAll().subscribe((residentes) => {
+  ngOnInit() {
+    this.listar();
+  }
+
+  listar() {
+    this.residenteService.getAll().subscribe((residentes: Residente[]) => {
       this.residentes = residentes;
     });
   }
 
-  navigateToCreate(): void {
-    this.router.navigate(["residentes/criar"]);
-  }
+  deletar(id: number) {
+    if (id) {
+      this.residenteService.delete(id).subscribe(() => {
+        const index = this.residentes.findIndex( c => c.id === id);
+        if (index > -1) {
+          this.residentes.splice(index, 1);
+        } 
+      })
+      this.alertaService.alertaSucesso("Residente excluído com sucesso!");
+      this.listar();
+    } 
+  } 
 }

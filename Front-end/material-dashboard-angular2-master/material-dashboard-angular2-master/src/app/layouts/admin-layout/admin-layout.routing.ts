@@ -21,6 +21,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
     { path: 'visitantes/editar/:id', component: UserProfileComponent},
-    { path: 'residentes',     component: ResidenteReadComponent},
-    { path: 'residentes/criar', component: ResidenteCreateComponent},
+    // { path: 'residentes',     component: ResidenteReadComponent},
+    { path: 'residentes', component: ResidenteCreateComponent},
+    { path: 'residentes/editar', component: ResidenteReadComponent}
 ];
