@@ -1,22 +1,57 @@
 {
   "visitantes": [
     {
-      "nome": "maria ",
-      "cpf": "112.856.869-65",
-      "telefone": "83999104713",
-      "endereco": "rua comendador ",
-      "veiculo": "",
-      "placa": "",
-      "id": 1
+      "nome": "Valquinho ",
+      "cpf": "112.856.856-96",
+      "telefone": "(83)99652-8563",
+      "endereco": "Rua da Areia, 56",
+      "veiculo": "Fusca",
+      "placa": "ABC-123",
+      "id": 3
     },
     {
-      "nome": "teste",
-      "cpf": "teste",
-      "telefone": "teste",
-      "endereco": "teste",
-      "veiculo": "teste",
-      "placa": "teste",
-      "id": 2
+      "nome": "Marcela Silva",
+      "cpf": "452.865.852-96",
+      "telefone": "(84)99563-5623",
+      "endereco": "Rua Antônio José, 52",
+      "veiculo": "",
+      "placa": "",
+      "id": 4
+    }
+  ],
+  "residentes": [
+    {
+      "nome": "Felipe Targino",
+      "cpf": "265.856.854-96",
+      "telefone": "(83)99652-4256",
+      "endereco": "Rua Capitão José Pessoa, 300",
+      "bloco": "A ",
+      "id": 5
+    },
+    {
+      "nome": "Pedro Paulo",
+      "cpf": "752.968.856-96",
+      "telefone": "(83)99685-4526",
+      "endereco": "Rua José Nascimento, 85",
+      "bloco": "B",
+      "id": 6
+    },
+    {
+      "nome": "Pablo Dias",
+      "cpf": "112.856.452-96",
+      "telefone": "(83)98652-4523",
+      "endereco": "Rua Comerciante Joaquim",
+      "bloco": "C",
+      "id": 7
+    }
+  ],
+  "porteiros": [
+    {
+      "nome": "Antônio da Silva",
+      "cpf": "112.856.745-96",
+      "telefone": "(83)9996-8596",
+      "endereco": "Rua João Duarte, 53",
+      "id": 1
     }
   ]
 }

@@ -4,7 +4,7 @@
           <div class="col-md-12">
               <div class="card">
                   <div class="card-header" id="header">
-                      <h4 class="card-title">Cadastrar Visitante</h4>
+                      <h4 class="card-title">Cadastrar Morador</h4>
                   </div>
                   <div class="card-body">
                       <form [formGroup]="formulario" (ngSubmit)="enviar()">
@@ -15,7 +15,6 @@
                                   <input matInput placeholder="Nome" type="text" formControlName="nome">
                                 </mat-form-field>
                               </div>
-
                               <div class="col-md-6">
                                 <mat-form-field class="example-full-width">
                                   <input matInput placeholder="CPF" type="text" formControlName="cpf">
@@ -38,14 +37,20 @@
                               </mat-form-field>
                             </div>
                             
+                              <!-- <div class="col-md-3">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="Casa" type="text" formControlName="casa">
+                                </mat-form-field>
+                              </div> -->
                               <div class="col-md-4">
                                 <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Veículo" type="text" formControlName="veiculo">
+                                  <input matInput placeholder="Bloco" type="text" formControlName="bloco">
                                 </mat-form-field>
                               </div>
+
                               <div class="col-md-4">
                                 <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Placa" type="text" formControlName="placa">
+                                  <input matInput placeholder="Número" type="text" formControlName="numero">
                                 </mat-form-field>
                               </div>
                           </div>
@@ -58,10 +63,10 @@
                                  </mat-form-field>
                               </div>
                           </div>
-
+                          
                           <button mat-raised-button type="submit" class="btn btn-sm pull-right" id="salvar" [disabled]="!formulario.valid">Salvar</button>
-                          <button mat-raised-button type="submit"  [routerLink]="['/table-list']" class="btn btn-sm pull-right" id="cancelar">Cancelar</button>
-
+                          <button mat-raised-button type="submit" [routerLink]="['/residentes/list']" class="btn btn-sm pull-right" id="cancelar">Cancelar</button>
+                          
                           <div class="clearfix"></div>
                       </form>
                   </div>

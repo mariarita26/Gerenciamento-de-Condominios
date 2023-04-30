@@ -18,8 +18,8 @@ export class UserProfileComponent implements OnInit {
   formulario = new FormGroup({
     nome: new FormControl('', Validators.required),
     cpf: new FormControl('', Validators.required),
-    telefone: new FormControl(''),
-    endereco: new FormControl(''),
+    telefone: new FormControl('', [Validators.min(11)]),
+    endereco: new FormControl('', Validators.required),
     veiculo: new FormControl(''),
     placa: new FormControl('')
   })

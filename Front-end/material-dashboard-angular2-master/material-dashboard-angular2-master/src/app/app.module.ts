@@ -23,8 +23,6 @@ import { ResidenteModule } from './residente/residente.module';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-
-
   ],
   providers: [],
   bootstrap: [AppComponent]
