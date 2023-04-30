@@ -18,9 +18,10 @@
                                     <th> CPF </th>
                                     <th> Telefone </th>
                                     <th> Endereço </th>
-                                    <th> Casa </th>
+                                    <!-- <th> Casa </th> -->
                                     <th> Bloco </th> 
                                     <th> Número </th>
+                                    <!-- <th> Ações </th> -->
                                  </thead>
                                 <tbody>
                                     <tr *ngFor="let residente of residentes">
@@ -29,7 +30,7 @@
                                         <td> {{ residente.cpf }} </td>
                                         <td> {{ residente.telefone }} </td>
                                         <td> {{ residente.endereco }} </td>
-                                        <td> {{ residente.casa }} </td>
+                                        <!-- <td> {{ residente.casa }} </td> -->
                                         <td> {{ residente.bloco }} </td>
                                         <td> {{ residente.numero }} </td>
                                         <td> <button mat-raised-button type="submit" id="editar" [routerLink]="['/residentes/editar/',residente.id]" class="btn btn-sm pull-right">Editar</button>

@@ -21,7 +21,7 @@ export class ResidenteCreateComponent implements OnInit {
     cpf: new FormControl('', Validators.required),
     telefone: new FormControl(''),
     endereco: new FormControl(''),
-    bloco: new FormControl('')
+    bloco: new FormControl('', Validators.required)
   })
 
 

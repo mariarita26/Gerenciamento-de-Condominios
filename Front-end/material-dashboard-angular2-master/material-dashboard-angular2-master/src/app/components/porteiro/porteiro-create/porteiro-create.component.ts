@@ -19,7 +19,7 @@ export class PorteiroCreateComponent implements OnInit {
     nome: new FormControl('', Validators.required),
     cpf: new FormControl('', Validators.required),
     telefone: new FormControl(''),
-    endereco: new FormControl('')
+    endereco: new FormControl('', Validators.required)
   })
 
   constructor(

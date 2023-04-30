@@ -6,11 +6,8 @@ import { AdminLayoutRoutes } from './admin-layout.routing';
 import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { UserProfileComponent } from '../../visitante2/cadastro-visitante.component';
 import { TableListComponent } from '../../visitante2/listagem-visitante/listagem-visitantes.component';
-import { TypographyComponent } from '../../typography/typography.component';
 import { IconsComponent } from '../../icons/icons.component';
-import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
-import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatRippleModule} from '@angular/material/core';
@@ -31,15 +28,12 @@ import { VisitanteModule } from 'app/visitante2/visitante.module';
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
-    VisitanteModule
+    VisitanteModule,
   ],
   declarations: [
     DashboardComponent,
-    TypographyComponent,
     IconsComponent,
-    MapsComponent,
     NotificationsComponent,
-    UpgradeComponent,
   ]
 })
 

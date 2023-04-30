@@ -4,8 +4,14 @@
 
 #editar {
     background-color: #FF6969;
+    /* margin-right: 70px; */
 }
 
 #deletar, #cadastrar {
     background-color: #19A7CE;
+    /* margin-right: 70px; */
+}
+
+#acoes{
+    margin-left: 100px;
 }

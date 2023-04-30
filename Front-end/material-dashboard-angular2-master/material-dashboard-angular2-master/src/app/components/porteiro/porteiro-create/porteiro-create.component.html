@@ -45,7 +45,7 @@
                                 </div>
                             </div>
                             
-                            <button mat-raised-button type="submit" class="btn btn-sm pull-right" id="salvar">Salvar</button>
+                            <button mat-raised-button type="submit" class="btn btn-sm pull-right" id="salvar" [disabled]="!formulario.valid">Salvar</button>
                             <button mat-raised-button type="submit"  [routerLink]="['/porteiros/list']" class="btn btn-sm pull-right" id="cancelar">Cancelar</button>  
                             <div class="clearfix"></div>
                         </form>

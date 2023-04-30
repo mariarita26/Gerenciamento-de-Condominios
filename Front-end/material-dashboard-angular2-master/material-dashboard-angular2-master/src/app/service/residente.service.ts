@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-import { Injectable } from '@angular/core';
-
-@Injectable({
-  providedIn: 'root'
-})
-export class ResidenteService {
-
-  constructor() { }
-=======
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Residente } from "app/interface/residente";
@@ -59,5 +49,4 @@ export class ResidenteService {
   buscarResidentePorId(id: number) {
     return this.http.get<Residente>(`${this.URL_residentes}/${id}`);
   }
->>>>>>> problemaDeRotas
 }
