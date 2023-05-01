@@ -1,9 +1,6 @@
-export interface Visitante {
-    id?: number;
-    nome: string;
-    cpf: string;
-    telefone: string;
-    endereco: string;
+import { Pessoa } from "./pessoa";
+
+export interface Visitante extends Pessoa{
     veiculo: string;
     placa: string;
 }
