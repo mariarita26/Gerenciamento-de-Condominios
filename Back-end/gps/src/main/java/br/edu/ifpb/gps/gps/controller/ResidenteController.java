@@ -13,6 +13,7 @@ import br.edu.ifpb.gps.gps.repository.VisitaRepository;
 import lombok.AllArgsConstructor;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/residente")
 public class ResidenteController {
     
