@@ -8,16 +8,16 @@ import { Observable } from "rxjs";
   providedIn: "root",
 })
 export class PorteiroService {
-  private readonly URL_porteiros = `${environment.API}/porteiros`;
+  private readonly URL_porteiros = `${environment.API}/porteiro`;
 
   constructor(private http: HttpClient) {}
 
   getAll(): Observable<Porteiro[]> {
-    return this.http.get<Porteiro[]>(`${environment.API}/porteiros`);
+    return this.http.get<Porteiro[]>(`${environment.API}/porteiro`);
   }
 
   create(porteiro: Porteiro): Observable<Porteiro> {
-    return this.http.post<Porteiro>(`${environment.API}/porteiros`, porteiro);
+    return this.http.post<Porteiro>(`${environment.API}/porteiro`, porteiro);
   }
 
   excluirPorteiro(id: number | undefined): Observable<object> {
