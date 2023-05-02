@@ -8,28 +8,28 @@ import { Observable } from "rxjs";
   providedIn: "root",
 })
 export class ResidenteService {
-  private readonly URL_residentes = `${environment.API}/residentes`;
+  private readonly URL_residentes = `${environment.API}/residente`;
 
   constructor(private http: HttpClient) {}
 
   getAll(): Observable<Residente[]> {
-    return this.http.get<Residente[]>(`${environment.API}/residentes`);
+    return this.http.get<Residente[]>(`${environment.API}/residente`);
   }
 
   create(residente: Residente): Observable<Residente> {
     return this.http.post<Residente>(
-      `${environment.API}/residentes`,
+      `${environment.API}/residente`,
       residente
     );
   }
 
   update(residente: Residente): Observable<Residente> {
-    const url = `${environment.API}residentes/${residente.id}`;
+    const url = `${environment.API}residente/${residente.id}`;
     return this.http.put<Residente>(url, residente);
   }
 
   readById(id: number): Observable<Residente> {
-    const url = `${environment.API}residentes/${id}`;
+    const url = `${environment.API}residente/${id}`;
     return this.http.get<Residente>(url);
   }
 
