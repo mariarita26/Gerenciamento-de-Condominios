@@ -9,7 +9,7 @@ import { Observable, take } from 'rxjs';
 })
 export class VisitanteService {
 
-  private readonly URL_visitantes = `${environment.API}/visitantes`;
+  private readonly URL_visitantes = `${environment.API}/visitante`;
 
   constructor(private http: HttpClient) { }
 

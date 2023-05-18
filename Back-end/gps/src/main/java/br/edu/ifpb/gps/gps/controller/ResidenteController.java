@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 import br.edu.ifpb.gps.gps.model.Residente;
 import br.edu.ifpb.gps.gps.repository.ResidenteRepository;
 import br.edu.ifpb.gps.gps.repository.VisitaRepository;
-import lombok.AllArgsConstructor;
 
 @RestController
 @CrossOrigin(origins = "*")

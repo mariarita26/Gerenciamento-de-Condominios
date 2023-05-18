@@ -4,7 +4,6 @@ import br.edu.ifpb.gps.gps.model.Porteiro;
 import br.edu.ifpb.gps.gps.model.Visita;
 import br.edu.ifpb.gps.gps.repository.PorteiroRepository;
 import br.edu.ifpb.gps.gps.repository.VisitaRepository;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
