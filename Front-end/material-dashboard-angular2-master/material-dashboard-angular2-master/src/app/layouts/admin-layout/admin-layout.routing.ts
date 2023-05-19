@@ -9,6 +9,7 @@ import { ResidenteReadComponent } from 'app/components/residente/residente-read/
 import { ResidenteCreateComponent } from 'app/components/residente/residente-create/residente-create.component';
 import { PorteiroCreateComponent } from 'app/components/porteiro/porteiro-create/porteiro-create.component';
 import { PorteiroReadComponent } from 'app/components/porteiro/porteiro-read/porteiro-read.component';
+import { VisitaComponent } from 'app/components/visita/visita.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
@@ -23,5 +24,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'residentes/list', component: ResidenteReadComponent},
     { path: 'porteiros',      component: PorteiroCreateComponent},
     { path: 'porteiros/editar/:id', component: PorteiroCreateComponent},
-    { path: 'porteiros/list', component: PorteiroReadComponent}
+    { path: 'porteiros/list', component: PorteiroReadComponent},
+    { path: 'visitas', component: VisitaComponent}
 ];

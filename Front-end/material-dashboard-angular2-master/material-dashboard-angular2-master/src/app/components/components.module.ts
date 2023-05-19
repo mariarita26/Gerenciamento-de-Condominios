@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AngularMaterialModule } from "app/angular-material/angular-material/angular-material.module";
 import { PorteiroCreateComponent } from "./porteiro/porteiro-create/porteiro-create.component";
 import { PorteiroReadComponent } from "./porteiro/porteiro-read/porteiro-read.component";
+import { VisitaComponent } from './visita/visita.component';
 // import { PorteiroModule } from "./porteiro/porteiro.module";
 
 
@@ -35,7 +36,8 @@ import { PorteiroReadComponent } from "./porteiro/porteiro-read/porteiro-read.co
     ResidenteReadComponent,
     ResidenteCreateComponent,
     PorteiroCreateComponent,
-    PorteiroReadComponent
+    PorteiroReadComponent,
+    VisitaComponent
   ],
   exports: [FooterComponent, NavbarComponent, SidebarComponent],
 })

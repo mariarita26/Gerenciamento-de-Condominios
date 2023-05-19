@@ -1,5 +1,5 @@
 {
-  "visitantes": [
+  "visitante": [
     {
       "nome": "Valquinho ",
       "cpf": "112.856.856-96",
@@ -17,9 +17,18 @@
       "veiculo": "",
       "placa": "",
       "id": 4
+    },
+    {
+      "nome": "Salim",
+      "cpf": "122",
+      "telefone": "",
+      "endereco": "rua comendador ",
+      "veiculo": "",
+      "placa": "",
+      "id": 5
     }
   ],
-  "residentes": [
+  "residente": [
     {
       "nome": "Felipe Targino",
       "cpf": "265.856.854-96",
@@ -45,12 +54,35 @@
       "id": 7
     }
   ],
-  "porteiros": [
+  "porteiro": [
     {
       "nome": "Antônio da Silva",
       "cpf": "112.856.745-96",
       "telefone": "(83)9996-8596",
       "endereco": "Rua João Duarte, 53",
+      "id": 1
+    },
+    {
+      "nome": "felipe targino",
+      "cpf": "112222",
+      "telefone": "",
+      "endereco": "capitão josé pessoa",
+      "id": 2
+    },
+    {
+      "nome": "sorte",
+      "cpf": "1222",
+      "telefone": "",
+      "endereco": "pf",
+      "id": 3
+    }
+  ],
+  "visita": [
+    {
+      "cadastro": "Antônio da Silva",
+      "autorizacao": "Pablo Dias",
+      "visitante": "Salim",
+      "data": "2023-05-19T01:06:58.274Z",
       "id": 1
     }
   ]

@@ -26,7 +26,7 @@ import { VisitanteModule } from 'app/visitante2/visitante.module';
     MatRippleModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule,
+    // MatSelectModule,
     MatTooltipModule,
     VisitanteModule,
   ],

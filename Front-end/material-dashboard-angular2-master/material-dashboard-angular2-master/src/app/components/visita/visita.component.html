@@ -1,0 +1,19 @@
+<h2>Registrar Visita</h2>
+<form>
+  <label for="cadastro">Cadastro:</label>
+  <select id="cadastro" [(ngModel)]="visita.cadastro" required style="width: 300px;">
+    <option *ngFor="let porteiro of porteiros" [value]="porteiro.nome">{{ porteiro.nome }} </option> 
+  </select>  
+  <!-- <input type="text" id="cadastro" [(ngModel)]="visita.cadastro" required> -->
+
+  <!-- <label for="autorizacao">Autorização:</label>
+  <input type="text" id="autorizacao" [(ngModel)]="visita.autorizacao" required> -->
+
+  <label for="cadastro">Autorizacao:</label>
+  <select id="cadastro" [(ngModel)]="visita.autorizacao" required style="width: 300px;">
+    <option *ngFor="let residente of residentes" [value]="residente.nome">{{ residente.nome }} </option> 
+  </select>  
+
+
+  <button type="button" (click)="registrarVisita()">Registrar</button>
+</form>

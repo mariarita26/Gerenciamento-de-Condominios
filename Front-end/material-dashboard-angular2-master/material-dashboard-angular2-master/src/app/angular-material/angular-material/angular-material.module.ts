@@ -9,6 +9,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 // import { MatTableModule } from '@angular/material/table';
 import {MatMenuModule} from '@angular/material/menu';
 import { MatTreeModule } from '@angular/material/tree';
+import { MatSelectModule } from '@angular/material/select';
 
 
 
@@ -36,7 +37,8 @@ import { MatTreeModule } from '@angular/material/tree';
     MatToolbarModule,
     // MatTableModule,
     MatMenuModule,
-    MatTreeModule
+    MatTreeModule,
+    MatSelectModule
   ]
 })
 export class AngularMaterialModule { }

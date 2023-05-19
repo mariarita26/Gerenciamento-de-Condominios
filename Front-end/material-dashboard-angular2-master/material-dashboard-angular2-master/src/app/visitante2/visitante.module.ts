@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AngularMaterialModule } from 'app/angular-material/angular-material/angular-material.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserProfileComponent } from './cadastro-visitante.component';
 import { TableListComponent } from './listagem-visitante/listagem-visitantes.component';
 
@@ -17,7 +17,8 @@ import { TableListComponent } from './listagem-visitante/listagem-visitantes.com
     CommonModule,
     RouterModule,
     AngularMaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
   ]
 })
 export class VisitanteModule { }

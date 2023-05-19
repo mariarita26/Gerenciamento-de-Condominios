@@ -7,7 +7,10 @@
                       <h4 class="card-title">Cadastrar Visitante</h4>
                   </div>
                   <div class="card-body">
-                      <form [formGroup]="formulario" (ngSubmit)="enviar()">
+
+                    
+
+                      <form [formGroup]="formulario">
               
                           <div class="row">
                               <div class="col-md-6">
@@ -30,6 +33,7 @@
                                 </mat-form-field>
                               </div>
                           </div>
+
                           <div class="row">
 
                             <div class="col-md-4">
@@ -49,21 +53,42 @@
                                 </mat-form-field>
                               </div>
                           </div>
-
-                          <div class="row">
-                              <div class="col-md-12">
-                                <label>Observações</label>
-                                <mat-form-field class="example-full-width">
-                                   <textarea matInput></textarea>
-                                 </mat-form-field>
-                              </div>
-                          </div>
-
-                          <button mat-raised-button type="submit" class="btn btn-sm pull-right" id="salvar" [disabled]="!formulario.valid">Salvar</button>
-                          <button mat-raised-button type="submit"  [routerLink]="['/table-list']" class="btn btn-sm pull-right" id="cancelar">Cancelar</button>
-
                           <div class="clearfix"></div>
                       </form>
+
+                      <form>
+                        <div class="row">
+                          <div class="col-md-4">
+                            <mat-form-field>
+                              <mat-label for="cadastro">Porteiro Responsável</mat-label>
+                              <mat-select id="cadastro" [(ngModel)]="visita.cadastro" required>
+                                <mat-option *ngFor="let porteiro of porteiros" [value]="porteiro.nome"> {{ porteiro.nome }} </mat-option>
+                              </mat-select>
+                            </mat-form-field> 
+                          </div>  
+                          
+                          <div class="col-md-4">
+                            <mat-form-field>
+                              <mat-label for="autorizacao">Autorizado por</mat-label>
+                              <mat-select id="autorizacao" [(ngModel)]="visita.autorizacao" required>
+                                <mat-option *ngFor="let residente of residentes" [value]="residente.nome"> {{ residente.nome }} </mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-12">
+                            <label>Observações</label>
+                            <mat-form-field class="example-full-width">
+                               <textarea matInput></textarea>
+                             </mat-form-field>
+                          </div>
+                        </div>
+                      </form>
+
+                      <button mat-raised-button type="submit" class="btn btn-sm pull-right" id="salvar" [disabled]="!formulario.valid" (click)="enviar()">Salvar</button>
+                      <button mat-raised-button type="submit"  [routerLink]="['/table-list']" class="btn btn-sm pull-right" id="cancelar">Cancelar</button>
                   </div>
               </div>
           </div>
