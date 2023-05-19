@@ -25,5 +25,5 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'porteiros',      component: PorteiroCreateComponent},
     { path: 'porteiros/editar/:id', component: PorteiroCreateComponent},
     { path: 'porteiros/list', component: PorteiroReadComponent},
-    { path: 'visitas', component: VisitaComponent}
+    { path: 'visitantes/:id/visitas', component: VisitaComponent}
 ];
