@@ -18,7 +18,7 @@ export class VisitaService {
   }
 
   getAll(): Observable<Visita[]>{
-    return this.http.get<Visita[]>(`${environment.API}`);
+    return this.http.get<Visita[]>(this.URL_visitas);
   } 
 
   // getVisitasByVisitanteId(visitanteId: number): Observable<Visita[]> {

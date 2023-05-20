@@ -127,6 +127,20 @@
       "visitanteId": "maria",
       "data": "2023-05-20T01:04:00.742Z",
       "id": 2
+    },
+    {
+      "cadastro": "Antônio da Silva",
+      "autorizacao": "Pablo Dias",
+      "visitanteId": 5,
+      "data": null,
+      "id": 3
+    },
+    {
+      "cadastro": "felipe targino",
+      "autorizacao": "Pedro Paulo",
+      "visitanteId": 4,
+      "data": "2023-05-20T13:52:52.119Z",
+      "id": 4
     }
   ]
 }

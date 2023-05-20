@@ -3,9 +3,9 @@ import { Residente } from "./residente";
 import { Visitante } from "./visitante";
 
 export interface Visita {
+    idVisita?: number,
     cadastro: Porteiro,
     autorizacao: Residente,
-    // visitante: Visitante | String,
-    visitanteId: Visitante | String,
+    visitanteId: Visitante | number,
     data: Date
 }
