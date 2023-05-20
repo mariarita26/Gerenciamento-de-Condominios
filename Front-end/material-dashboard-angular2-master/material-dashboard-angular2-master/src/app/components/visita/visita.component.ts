@@ -27,7 +27,7 @@ export class VisitaComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       this.visitanteId = Number(params.get('id'));
-      this.carregarVisitas();
+      // this.carregarVisitas();
     });
     this.carregarVisitantes();
   }
@@ -40,30 +40,30 @@ export class VisitaComponent implements OnInit {
   //   this.visitaService.getVisitasByVisitanteId(this.visitanteId).subscribe(visitas => this.visitas = visitas);
   // }
 
-  carregarVisitas() {
-    this.visitaService.getVisitasByVisitanteId(this.visitanteId).subscribe(
-      visitas => {
-        this.visitas = visitas;
-        console.log(this.visitas); // Exibir no console as visitas do visitante
-      },
-      error => {
-        console.error('Erro ao carregar visitas:', error);
-      }
-    );
-  }
+  // carregarVisitas() {
+  //   this.visitaService.getVisitasByVisitanteId(this.visitanteId).subscribe(
+  //     visitas => {
+  //       this.visitas = visitas;
+  //       console.log(this.visitas); // Exibir no console as visitas do visitante
+  //     },
+  //     error => {
+  //       console.error('Erro ao carregar visitas:', error);
+  //     }
+  //   );
+  // }
 
 
-  exibirVisita(visitante: Visitante) {
-    // Lógica para exibir a visita correspondente ao visitante clicado
-    const visita = this.visitas.find(v => v.visitante === visitante);
-    if (visita) {
-      console.log('Autorizador:', visita.autorizacao);
-      console.log('Cadastro:', visita.cadastro);
-      console.log('Horário da visita:', visita.data);
-    } else {
-      console.log('Visita não encontrada');
-    }
-  }
+  // exibirVisita(visitante: Visitante) {
+  //   // Lógica para exibir a visita correspondente ao visitante clicado
+  //   const visita = this.visitas.find(v => v.visitanteId === visitante);
+  //   if (visita) {
+  //     console.log('Autorizador:', visita.autorizacao);
+  //     console.log('Cadastro:', visita.cadastro);
+  //     console.log('Horário da visita:', visita.data);
+  //   } else {
+  //     console.log('Visita não encontrada');
+  //   }
+  // }
   
 
 }

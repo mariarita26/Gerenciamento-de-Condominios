@@ -38,7 +38,8 @@ export class UserProfileComponent implements OnInit {
   visita: Visita = {
     cadastro: null,
     autorizacao: null,
-    visitante: null,
+    // visitanteId: this.idVisitante,
+    visitanteId: null,
     data: new Date()
   };
 
@@ -58,6 +59,7 @@ export class UserProfileComponent implements OnInit {
     this.carregarResidentes();
     
     this.idVisitante = Number(this.route.snapshot.paramMap.get('id'));
+    console.log('verificando',this.idVisitante);
 
     if (this.idVisitante !== 0){
       this.visitanteService.buscarVisitantePorId(this.idVisitante).subscribe((visitante: Visitante) => {
@@ -72,7 +74,7 @@ export class UserProfileComponent implements OnInit {
       }, (error) => {
         console.log(error);
       });
-    }
+    } 
   } 
 
   carregarPorteiros() {
@@ -93,14 +95,16 @@ export class UserProfileComponent implements OnInit {
   }
 
   registrarVisita() {
+    // pegar o nome do visitante pelo formulário
     const nome = this.formulario.get('nome').value;
-    // pega o nome do visitante e atribui a quem está visitando
-    this.visita.visitante = nome;
+    this.visita.visitanteId = nome;
 
     if (!this.visita.cadastro) {
       console.error('Selecione um porteiro', this.visita.cadastro);
       return;
     }
+    
+    // this.visita.visitanteId = this.idVisitante;
 
     this.visitaService.registrarVisita(this.visita).subscribe(() => 
       {
@@ -128,16 +132,12 @@ export class UserProfileComponent implements OnInit {
     }
 
     this.visitanteService.inserir(visitante).subscribe(() => {
-      console.log(visitante.nome);
       this.alertaService.alertaSucesso("Visitante cadastrado");
       this.router.navigate(['/table-list']);
     }, (error) => {
       console.log(error);
     });
+
   }
-
-    
-
-    
 
 }

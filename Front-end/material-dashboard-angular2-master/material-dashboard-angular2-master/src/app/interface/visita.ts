@@ -5,6 +5,7 @@ import { Visitante } from "./visitante";
 export interface Visita {
     cadastro: Porteiro,
     autorizacao: Residente,
-    visitante: Visitante | String,
+    // visitante: Visitante | String,
+    visitanteId: Visitante | String,
     data: Date
 }

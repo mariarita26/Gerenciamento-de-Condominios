@@ -25,7 +25,7 @@ export class VisitaService {
   //   return this.http.get<Visita[]>(`${environment.API}/visitantes/${visitanteId}/visitas`);
   // }
 
-  getVisitasByVisitanteId(visitanteId: number): Observable<Visita[]> {
+  getVisitasByVisitanteId(visitanteId: String): Observable<Visita[]> {
     return this.http.get<Visita[]>(`${environment.API}/visitantes/${visitanteId}/visitas`)
       .pipe(
         catchError((error: any) => {
