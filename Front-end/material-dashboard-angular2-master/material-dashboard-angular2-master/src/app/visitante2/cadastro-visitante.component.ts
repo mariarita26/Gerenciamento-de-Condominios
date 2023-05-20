@@ -97,14 +97,14 @@ export class UserProfileComponent implements OnInit {
   registrarVisita() {
     // pegar o nome do visitante pelo formulário
     const nome = this.formulario.get('nome').value;
-    this.visita.visitanteId = nome;
+    // this.visita.visitanteId = nome;
 
     if (!this.visita.cadastro) {
       console.error('Selecione um porteiro', this.visita.cadastro);
       return;
     }
     
-    // this.visita.visitanteId = this.idVisitante;
+    this.visita.visitanteId = this.idVisitante;
 
     this.visitaService.registrarVisita(this.visita).subscribe(() => 
       {

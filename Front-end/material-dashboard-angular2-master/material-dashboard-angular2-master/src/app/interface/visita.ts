@@ -6,6 +6,6 @@ export interface Visita {
     cadastro: Porteiro,
     autorizacao: Residente,
     // visitante: Visitante | String,
-    visitanteId: Visitante | String,
+    visitanteId: Visitante | Number,
     data: Date
 }
