@@ -34,6 +34,7 @@ export const ROUTES: RouteInfo[] = [
     // { path: '/user-profile', title: 'Cadastro de visitantes',  icon:'person', class: '' },
     { path: '/table-list', title: 'Visitantes',  icon:'content_paste', class: '' },
     { path: '/porteiros/list', title: 'Porteiros', icon:'badge', class: ''},
+    { path: '/visitas/list', title: 'Visitas', icon:'emoji_people', class: ''},
     { path: '/notifications', title: 'Notifications',  icon:'notifications', class: '' },    
 ];
 

@@ -1,0 +1,31 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header" id="header">
+            <h4 class="card-title">
+              Registro de visitas
+              <button
+                mat-raised-button
+                type="submit"
+                (click)="navigateToCreate()"
+                id="cadastrar"
+                class="btn btn-sm pull-right"
+              >
+                Cadastrar
+              </button>
+            </h4>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <div *ngFor="let v of visitas">
+                <h1>{{ v.cadastro }}</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

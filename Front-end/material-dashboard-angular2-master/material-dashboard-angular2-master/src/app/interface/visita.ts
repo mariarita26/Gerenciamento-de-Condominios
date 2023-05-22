@@ -3,9 +3,16 @@ import { Residente } from "./residente";
 import { Visitante } from "./visitante";
 
 export interface Visita {
-    cadastro: Porteiro,
-    autorizacao: Residente,
-    // visitante: Visitante | String,
-    visitanteId: Visitante | Number,
+    idVisita?: number,
+    cadastro: String,
+    autorizacao: String,
+    visitanteId: number,
     data: Date
 }
+// visita{
+//     id: null,
+//     porteiro: idPorteiro,
+//     autorizacao: idResidente,
+//     visitante: idVisitante,
+//     data: Date
+// }

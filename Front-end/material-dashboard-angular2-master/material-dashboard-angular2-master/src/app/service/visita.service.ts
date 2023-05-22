@@ -18,14 +18,10 @@ export class VisitaService {
   }
 
   getAll(): Observable<Visita[]>{
-    return this.http.get<Visita[]>(`${environment.API}`);
+    return this.http.get<Visita[]>(this.URL_visitas);
   } 
 
-  // getVisitasByVisitanteId(visitanteId: number): Observable<Visita[]> {
-  //   return this.http.get<Visita[]>(`${environment.API}/visitantes/${visitanteId}/visitas`);
-  // }
-
-  getVisitasByVisitanteId(visitanteId: String): Observable<Visita[]> {
+  getVisitasByVisitanteId(visitanteId: number): Observable<Visita[]> {
     return this.http.get<Visita[]>(`${environment.API}/visitantes/${visitanteId}/visitas`)
       .pipe(
         catchError((error: any) => {
@@ -33,5 +29,10 @@ export class VisitaService {
           throw error;
         })
       );
+  }
+
+  getVisitasPorPorteiro(idPorteiro: string): Observable<Visita[]> {
+    const url = `${environment.API}?porteiroId=${idPorteiro}`;
+    return this.http.get<Visita[]>(url);
   }
 }

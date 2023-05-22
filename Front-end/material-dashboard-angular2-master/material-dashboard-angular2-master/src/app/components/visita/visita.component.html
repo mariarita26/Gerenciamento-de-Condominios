@@ -2,7 +2,7 @@
 
 <h2>Visitas do Visitante</h2>
 
-<div *ngIf="visitas.length === 0">
+<!-- <div *ngIf="visitas.length === 0">
   <p>Nenhuma visita encontrada.</p>
 </div>
 
@@ -10,5 +10,11 @@
   <h3>Data da Visita: {{ visita.data | date }}</h3>
   <p>Cadastrado por: {{ visita.cadastro.nome }}</p>
   <p>Autorizado por: {{ visita.autorizacao }}</p>
+</div> -->
+
+<div *ngFor="let visita of visitas">
+  <p>Data: {{ visita.data }}</p>
+  <!-- Exibir outras informações do registro -->
 </div>
+
  <p> tá abrindo a pag</p>

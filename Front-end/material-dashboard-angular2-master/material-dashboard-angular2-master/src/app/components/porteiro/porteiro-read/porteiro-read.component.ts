@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Porteiro } from 'app/interface/porteiro';
 import { AlertasService } from 'app/service/alertas.service';
 import { PorteiroService } from 'app/service/porteiro.service';
@@ -18,7 +18,8 @@ export class PorteiroReadComponent implements OnInit {
   constructor(
     private router: Router,
     private porteiroService: PorteiroService,
-    private alertaService: AlertasService
+    private alertaService: AlertasService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {

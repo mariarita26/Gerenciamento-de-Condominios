@@ -23,9 +23,9 @@
                                   <th id="acoes"> Ações </th>
                                </thead>
                               <tbody>
-                                  <tr *ngFor="let visitante of visitantes" [routerLink]="['/visitantes', visitante.nome, 'visitas']">
+                                  <tr *ngFor="let visitante of visitantes">
                                       <td> {{ visitante.id }}</td>
-                                      <td> {{ visitante.nome }} </td>
+                                      <td [routerLink]="['/visitantes', visitante.id, 'visitas']"> {{ visitante.nome }} </td>
                                       <td> {{ visitante.cpf }} </td>
                                       <td> {{ visitante.telefone }} </td>
                                       <td> {{ visitante.endereco }} </td>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Visita } from 'app/interface/visita';
 import { Visitante } from 'app/interface/visitante';
 import { PorteiroService } from 'app/service/porteiro.service';
@@ -25,32 +25,36 @@ export class VisitaComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-      this.visitanteId = Number(params.get('id'));
-      // this.carregarVisitas();
+    // this.route.paramMap.subscribe(params => {
+    //   this.visitanteId = Number(params.get('id'));
+    //   this.carregarVisitas();
+    // });
+    // this.carregarVisitantes();
+    const idPorteiro = this.route.snapshot.paramMap.get('idPorteiro');
+    this.carregarRegistros(idPorteiro);
+  }
+
+  carregarRegistros(idPorteiro: string) {
+    this.visitaService.getVisitasPorPorteiro(idPorteiro).subscribe((visitas: Visita[]) => {
+      this.visitas = visitas;
     });
-    this.carregarVisitantes();
   }
 
   carregarVisitantes() {
     this.visitanteService.listar().subscribe(visitantes => this.visitantes = visitantes);
   }
 
-  // carregarVisitas() {
-  //   this.visitaService.getVisitasByVisitanteId(this.visitanteId).subscribe(visitas => this.visitas = visitas);
-  // }
-
-  // carregarVisitas() {
-  //   this.visitaService.getVisitasByVisitanteId(this.visitanteId).subscribe(
-  //     visitas => {
-  //       this.visitas = visitas;
-  //       console.log(this.visitas); // Exibir no console as visitas do visitante
-  //     },
-  //     error => {
-  //       console.error('Erro ao carregar visitas:', error);
-  //     }
-  //   );
-  // }
+  carregarVisitas() {
+    this.visitaService.getVisitasByVisitanteId(this.visitanteId).subscribe(
+      visitas => {
+        this.visitas = visitas;
+        console.log(this.visitas); // Exibir no console as visitas do visitante
+      },
+      error => {
+        console.error('Erro ao carregar visitas:', error);
+      }
+    );
+  }
 
 
   // exibirVisita(visitante: Visitante) {

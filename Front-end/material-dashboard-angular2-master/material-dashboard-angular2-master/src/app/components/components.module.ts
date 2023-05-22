@@ -15,6 +15,8 @@ import { AngularMaterialModule } from "app/angular-material/angular-material/ang
 import { PorteiroCreateComponent } from "./porteiro/porteiro-create/porteiro-create.component";
 import { PorteiroReadComponent } from "./porteiro/porteiro-read/porteiro-read.component";
 import { VisitaComponent } from './visita/visita.component';
+import { VisitaReadComponent } from './visita/visita-read/visita-read.component';
+import { VisitaCreateComponent } from './visita-novo/visita-create/visita-create.component';
 // import { PorteiroModule } from "./porteiro/porteiro.module";
 
 
@@ -37,7 +39,9 @@ import { VisitaComponent } from './visita/visita.component';
     ResidenteCreateComponent,
     PorteiroCreateComponent,
     PorteiroReadComponent,
-    VisitaComponent
+    VisitaComponent,
+    VisitaReadComponent,
+    VisitaCreateComponent
   ],
   exports: [FooterComponent, NavbarComponent, SidebarComponent],
 })
