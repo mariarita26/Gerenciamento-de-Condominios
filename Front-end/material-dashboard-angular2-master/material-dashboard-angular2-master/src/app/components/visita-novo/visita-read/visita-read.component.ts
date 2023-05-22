@@ -8,7 +8,7 @@ import { VisitaService } from 'app/service/visita.service';
   templateUrl: './visita-read.component.html',
   styleUrls: ['./visita-read.component.scss']
 })
-export class VisitaReadComponent implements OnInit {
+export class VisitaNovoReadComponent implements OnInit {
 
   visitas: Visita[];
   displayedColumns = ['idVisita', 'cadastro', 'autorizacao', 'visitanteId', 'data']
@@ -19,9 +19,12 @@ export class VisitaReadComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.listar()
+  }
+
+  listar() {
     this.visitaService.getAll().subscribe((visitas: Visita[]) => {
       this.visitas = visitas;
-      console.log(this.visitas);
     });
   }
 

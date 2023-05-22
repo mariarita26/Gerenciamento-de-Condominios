@@ -21,11 +21,10 @@
                                  </thead>
                                 <tbody>
                                     <tr *ngFor="let visita of visitas">
-                                        <td> {{ visita.id }}</td>                                        
-                                        <td> {{ visita.visitante.nome }} </td>
+                                        <td> {{ visita }}</td>                                        
                                         <td> {{ visita.autorizacao }} </td>
                                         <td> {{ visita.cadastro }} </td>
-                                        <td> {{ visita.data }} </td>                                        
+                                        <td> {{ visita.data }} </td>                                         
                                     </tr>
                                 </tbody>  
                             </table>
@@ -38,3 +37,4 @@
   </div> 
   
 </div>  
+
