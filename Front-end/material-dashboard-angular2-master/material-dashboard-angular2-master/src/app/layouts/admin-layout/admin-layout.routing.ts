@@ -11,7 +11,7 @@ import { PorteiroCreateComponent } from 'app/components/porteiro/porteiro-create
 import { PorteiroReadComponent } from 'app/components/porteiro/porteiro-read/porteiro-read.component';
 import { VisitaComponent } from 'app/components/visita/visita.component';
 import { VisitaCreateComponent } from 'app/components/visita-novo/visita-create/visita-create.component';
-import { VisitaReadComponent } from 'app/components/visita-novo/visita-read/visita-read.component';
+import { VisitaNovoReadComponent } from 'app/components/visita-novo/visita-read/visita-read.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
@@ -30,5 +30,5 @@ export const AdminLayoutRoutes: Routes = [
     // { path: 'visitantes/:nome/visitas', component: VisitaComponent},
     { path: 'visitas/:id/', component: VisitaComponent},
     { path: 'visitas', component: VisitaCreateComponent},
-    { path: 'visitas/list', component: VisitaReadComponent}
+    { path: 'visitas/list', component: VisitaNovoReadComponent}
 ];

@@ -8,7 +8,7 @@ import { VisitaService } from 'app/service/visita.service';
   templateUrl: './visita-read.component.html',
   styleUrls: ['./visita-read.component.scss']
 })
-export class VisitaReadComponent implements OnInit {
+export class VisitaNovoReadComponent implements OnInit {
 
   visitas: Visita[];
   displayedColumns = ['autorizacao', 'cadastro', 'data', 'id', 'visitanteId']
@@ -19,20 +19,13 @@ export class VisitaReadComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-      this.visitaService.getAll().subscribe((v: Visita[]) => {
-        this.visitas = v;
-        console.log(this.visitas);
-        
-      });
-      // this.visitas = [
-      //   {
-      //     idVisita: 0,
-      //     cadastro: "teste",
-      //     autorizacao: "Teste",
-      //     visitanteId: 0,
-      //     data: new Date()
-      //   }
-      // ]
+    this.listar()
+  }
+
+  listar() {
+    this.visitaService.getAll().subscribe((visitas: Visita[]) => {
+      this.visitas = visitas;
+    });
   }
 
   navigateToCreate(): void {
