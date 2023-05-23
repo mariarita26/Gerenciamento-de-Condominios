@@ -1,7 +1,7 @@
 <div class="main-content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12" id="card">
                 <div class="card">
                     <div class="card-header" id="header">
                         <h4 class="card-title ">Registro de visitas
@@ -14,17 +14,19 @@
                             <table  class="table" >
                                 <thead class=" text-primary">
                                     <th> ID </th>
-                                    <th> Visitante </th>
+                                    <th> Visitante </th> 
                                     <th> Autorização </th>
-                                    <th> Porteiro </th>
+                                    <th> Porteiro </th>                                                                       
                                     <th> Data </th>
                                  </thead>
                                 <tbody>
                                     <tr *ngFor="let visita of visitas">
-                                        <td> {{ visita }}</td>                                        
+                                        <td> {{ visita.id }}</td>     
+                                        <td> {{ visita.visitanteId }} </td>                                   
                                         <td> {{ visita.autorizacao }} </td>
                                         <td> {{ visita.cadastro }} </td>
-                                        <td> {{ visita.data }} </td>                                         
+                                        <!-- <td> {{ getNomeVisitante(visita.visitanteId) }} </td> -->                                        
+                                        <td> {{ visita.data | date:'dd/MM/yyyy HH:mm:ss' }} </td>                                         
                                     </tr>
                                 </tbody>  
                             </table>

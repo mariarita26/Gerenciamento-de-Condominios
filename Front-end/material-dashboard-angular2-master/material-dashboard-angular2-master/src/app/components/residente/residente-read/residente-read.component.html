@@ -20,7 +20,7 @@
                                     <th> Endereço </th>
                                     <!-- <th> Casa </th> -->
                                     <th> Bloco </th> 
-                                    <th> Número </th>
+                                    <!-- <th> Número </th> -->
                                     <!-- <th> Ações </th> -->
                                  </thead>
                                 <tbody>
@@ -32,7 +32,7 @@
                                         <td> {{ residente.endereco }} </td>
                                         <!-- <td> {{ residente.casa }} </td> -->
                                         <td> {{ residente.bloco }} </td>
-                                        <td> {{ residente.numero }} </td>
+                                        <!-- <td> {{ residente.numero }} </td> -->
                                         <td> <button mat-raised-button type="submit" id="editar" [routerLink]="['/residentes/editar/',residente.id]" class="btn btn-sm pull-right">Editar</button>
                                             <button mat-raised-button type="submit"  id="deletar" (click)="deletar(residente.id)" class="btn btn-sm pull-right">Deletar</button> 
                                         </td>

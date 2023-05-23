@@ -6,7 +6,7 @@ export interface Visita {
     idVisita?: number,
     cadastro: String,
     autorizacao: String,
-    visitanteId: number,
+    visitanteId: String,
     data: Date
 }
 // visita{

@@ -1,23 +1,24 @@
 <div class="main-content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-10" id="card">
                 <div class="card">
                     <div class="card-header" id="header">
-                        <h4 class="card-title">Cadastrar Visitante</h4>
+                        <h4 class="card-title">Cadastro de Visita</h4>
                     </div>
                     <div class="card-body">
                         <form>
                           <div class="row">
+
                             <div class="col-md-4">
                               <mat-form-field>
-                                <mat-label for="cadastro">Porteiro Responsável</mat-label>
-                                <mat-select id="cadastro" [(ngModel)]="visita.cadastro" required>
-                                  <mat-option *ngFor="let porteiro of porteiros" [value]="porteiro.nome"> {{ porteiro.nome }} </mat-option>
+                                <mat-label for="cadastro">Visitante</mat-label>
+                                <mat-select id="cadastro" [(ngModel)]="visita.visitanteId" required>
+                                  <mat-option *ngFor="let visitante of visitantes" [value]="visitante.nome"> {{ visitante.nome }} </mat-option>
                                 </mat-select>
                               </mat-form-field> 
-                            </div>  
-                            
+                            </div> 
+
                             <div class="col-md-4">
                               <mat-form-field>
                                 <mat-label for="autorizacao">Autorizado por</mat-label>
@@ -29,12 +30,12 @@
 
                             <div class="col-md-4">
                               <mat-form-field>
-                                <mat-label for="cadastro">Visitante</mat-label>
-                                <mat-select id="cadastro" [(ngModel)]="visita.visitanteId" required>
-                                  <mat-option *ngFor="let visitante of visitantes" [value]="visitante.id"> {{ visitante.nome }} </mat-option>
+                                <mat-label for="cadastro">Porteiro Responsável</mat-label>
+                                <mat-select id="cadastro" [(ngModel)]="visita.cadastro" required>
+                                  <mat-option *ngFor="let porteiro of porteiros" [value]="porteiro.nome"> {{ porteiro.nome }} </mat-option>
                                 </mat-select>
                               </mat-form-field> 
-                            </div> 
+                            </div>  
 
                           </div>
 
@@ -49,7 +50,7 @@
                         </form>
   
                         <button mat-raised-button type="submit" class="btn btn-sm pull-right" id="salvar" (click)="criarVisita()">Salvar</button>
-                        <button mat-raised-button type="submit"  [routerLink]="['/table-list']" class="btn btn-sm pull-right" id="cancelar">Cancelar</button>
+                        <button mat-raised-button type="submit"  [routerLink]="['/visitas/list']" class="btn btn-sm pull-right" id="cancelar">Cancelar</button>
                     </div>
                 </div>
             </div>

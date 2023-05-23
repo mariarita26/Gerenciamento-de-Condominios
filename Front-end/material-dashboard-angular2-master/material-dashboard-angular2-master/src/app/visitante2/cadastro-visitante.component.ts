@@ -19,8 +19,6 @@ import { VisitanteService } from 'app/service/visitante.service';
 export class UserProfileComponent implements OnInit {
 
   visitantes: Visitante[];
-  porteiros: Porteiro[]; 
-  residentes: Residente[];
 
   idVisitante = 0;
 
@@ -34,15 +32,6 @@ export class UserProfileComponent implements OnInit {
     placa: new FormControl(''),
   })
 
-  // Formulário da visita
-  visita: Visita = {
-    cadastro: null,
-    autorizacao: null,
-    visitanteId: this.idVisitante,
-    // visitanteId: null,
-    data: new Date()
-  };
-
   constructor(
     private router: Router,
     private visitanteService: VisitanteService,
@@ -54,9 +43,6 @@ export class UserProfileComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
-    this.carregarPorteiros();
-    this.carregarResidentes();
     
     this.idVisitante = Number(this.route.snapshot.paramMap.get('id'));
     console.log('verificando',this.idVisitante);
@@ -77,48 +63,9 @@ export class UserProfileComponent implements OnInit {
     } 
   } 
 
-  carregarPorteiros() {
-    this.porteiroService.getAll().subscribe((porteiros) => {
-        this.porteiros = porteiros;
-      }, (error) => {
-        console.error('Erro ao carregar porteiros:', error);
-      }
-    );
-  }
-
-  carregarResidentes() {
-    this.residenteService.getAll().subscribe((residentes) => {
-      this.residentes = residentes;
-    }, (error) => {
-      console.error('Erro ao carregar residentes:', error);
-    });
-  }
-
-  registrarVisita() {
-    // pegar o nome do visitante pelo formulário
-
-    if (!this.visita.cadastro) {
-      console.error('Selecione um porteiro', this.visita.cadastro);
-      return;
-    }
-    
-    this.visita.visitanteId = this.idVisitante;
-
-    this.visitaService.registrarVisita(this.visita).subscribe(() => 
-      {
-        console.log('ok', this.visita.cadastro);
-      },
-      (error) => {
-        console.error('Erro ao registrar visita:', error);
-      }
-    );
-  }
-  
-
   enviar() {
     const visitante: Visitante = this.formulario.value as Visitante;
 
-    this.registrarVisita();
 
     if (this.idVisitante) {
       visitante.id = this.idVisitante;

@@ -3,9 +3,13 @@
 }
 
 #salvar {
-    background-color: #FF6969;
+    background-color: #19A7CE;
 }
 
 #cancelar {
-    background-color: #19A7CE;
+    background-color: #FF6969;
+}
+
+#card {
+    margin-left: 110px;
 }
