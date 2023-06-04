@@ -18,6 +18,7 @@ import { VisitaComponent } from './visita/visita.component';
 import { VisitaReadComponent } from './visita/visita-read/visita-read.component';
 import { VisitaCreateComponent } from './visita-novo/visita-create/visita-create.component';
 import { VisitaNovoReadComponent } from "./visita-novo/visita-read/visita-read.component";
+import { EnterComponent } from './login/enter/enter.component';
 // import { PorteiroModule } from "./porteiro/porteiro.module";
 
 
@@ -43,7 +44,8 @@ import { VisitaNovoReadComponent } from "./visita-novo/visita-read/visita-read.c
     VisitaComponent,
     VisitaReadComponent,
     VisitaCreateComponent,
-    VisitaNovoReadComponent
+    VisitaNovoReadComponent,
+    EnterComponent
   ],
   exports: [FooterComponent, NavbarComponent, SidebarComponent],
 })

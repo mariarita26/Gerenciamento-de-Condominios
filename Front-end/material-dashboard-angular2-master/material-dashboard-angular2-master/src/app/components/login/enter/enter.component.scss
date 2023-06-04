@@ -1,0 +1,54 @@
+.container {
+    display: flex;
+    height: 100vh; /* Define a altura total da tela */
+  }
+  
+  .half {
+    flex-basis: 50%; /* Define a largura de cada metade como 50% */
+    padding: 20px; /* Adicione algum espaço em torno dos componentes */
+    box-sizing: border-box; /* Inclui preenchimento e borda no tamanho total */
+  }
+
+  .image-container {
+    display: flex;
+    justify-content: flex-end; /* Alinha a imagem à direita */
+    align-items: right; /* Centraliza verticalmente a imagem */
+  }
+
+  .image{
+      /* width: 50px; */
+      height: 100px;
+      object-fit: cover;
+  }
+  #entrar{
+      width: 300px;
+      background-color: #19A7CE;
+  }
+
+  #cadastro {
+      width: 300px;
+      background-color: #ebf0f2;
+      color: #19A7CE;
+  }
+
+  #texto{
+      font-size: 13px;
+      text-align: center;
+      padding-top: 100px;
+  }
+
+  #redefinicao{
+      color: #19A7CE;
+  }
+
+  #inserirDados{
+      font-size: 13px;
+  }
+
+  /* .logo{
+      width: 100px;
+      height: 100px;
+  } */
+  footer{
+      text-align: start;
+  }

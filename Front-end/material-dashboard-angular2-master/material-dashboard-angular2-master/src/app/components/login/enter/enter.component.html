@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+<body>
+    <div class="logo">
+            <!-- <div id="logo-img">
+                <img src="/assets/img/fortseg.png"/>
+            </div> -->
+            FortSeg
+    </div>
+
+    <div class="container">
+        <div class="half">
+
+          <h3><b>Bem vindo ao FortSeg</b></h3>
+          <p id="inserirDados">Bem vindo de volta! Por favor, insira seus dados.</p>
+
+          <form class="example-form">
+            <mat-form-field class="example-full-width">
+              <mat-label>E-mail</mat-label>
+              <input matInput placeholder="Digite seu e-mail" type="email">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Senha</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" formControlName="senha">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+ 
+            <button mat-raised-button type="submit" class="btn pull-right" id="entrar">Entrar</button> 
+            <p> <button mat-raised-button type="submit" class="btn pull-right" id="cadastro">Cadastre-se</button> </p>
+          
+          </form>
+          
+          <div id="texto">
+            Esqueceu a sua senha? <b id="redefinicao">Redefina sua senha</b>
+          </div>
+            
+        </div> 
+        
+        <div class="half">
+          <div class="image-container">
+            <div class="image">
+                <!-- <img src="/assets/img/fortseg.png"/> -->
+                <img src="/assets/img/seguranca-patrimonial-730x400.jpg" alt="Imagem de Segurança Patrimonial">
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="copyright pull-left">
+            &copy;
+           FortSeg 2023
+        </div>
+      </footer>
+</body>
+</html>
