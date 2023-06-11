@@ -4,12 +4,12 @@
 </head>
 
 <body>
-    <div class="logo">
+    <!-- <div class="logo"> -->
             <!-- <div id="logo-img">
                 <img src="/assets/img/fortseg.png"/>
             </div> -->
-            FortSeg
-    </div>
+            <!-- FortSeg -->
+    <!-- </div> -->
 
     <div class="container">
         <div class="half">
@@ -17,10 +17,10 @@
           <h3><b>Bem vindo ao FortSeg</b></h3>
           <p id="inserirDados">Bem vindo de volta! Por favor, insira seus dados.</p>
 
-          <form class="example-form">
+          <form (ngSubmit)="onSubmit()" class="example-form">
             <mat-form-field class="example-full-width">
               <mat-label>E-mail</mat-label>
-              <input matInput placeholder="Digite seu e-mail" type="email">
+              <input formControlName="email" matInput placeholder="Digite seu e-mail" type="email" required />
             </mat-form-field>
 
             <mat-form-field class="example-full-width">
@@ -32,7 +32,7 @@
             </mat-form-field>
  
             <button mat-raised-button type="submit" class="btn pull-right" id="entrar">Entrar</button> 
-            <p> <button mat-raised-button type="submit" class="btn pull-right" id="cadastro">Cadastre-se</button> </p>
+            <!-- <p> <button mat-raised-button type="submit" class="btn pull-right" id="cadastro">Cadastre-se</button> </p> -->
           
           </form>
           
