@@ -1,25 +1,33 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from 'environments/environment';
+
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class ContaService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
-  async login(user: any){
-    const result = await this.http.post<any>(`${environment.API}/api/conta/login`, user).toPromise();
-    if (result && result.access_token){
-      localStorage.setItem('token', result.access_token);
-      return true;
-    }
-    return false;
+  login(user: any) {
+    return new Promise((resolve) => {
+      window.localStorage.setItem('token', 'meu-token');
+      resolve(true);
+    });
   }
 
-  // async createAccount(account: any){
-  //   const result = await this.http.post<any>(`${environment.API}/users`, account).toPromise();
-  //   return result;
-  // }
+  createAccount(account: any) {
+    return new Promise((resolve) => {
+      resolve(true);
+    });
+  }
+
+  logout() {
+		// remove user from local storage to log user out
+		localStorage.removeItem('token');
+		this.router.navigate(['/login']);
+	}
+
 }

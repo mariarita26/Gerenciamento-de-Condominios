@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ContaService } from 'app/service/conta.service';
-import { Router } from 'express';
 
 @Component({
   selector: 'app-enter',
@@ -8,30 +9,35 @@ import { Router } from 'express';
   styleUrls: ['./enter.component.scss']
 })
 export class EnterComponent implements OnInit {
-  
+
+  hide: boolean = true;
+
   login = {
-    email = '',
-    password = ''
-  };
-  hide = true;
-  
+    email: '',
+    password: '',
+  }
+
+  loginForm: FormGroup = this.fb.group({
+		email: ['', [Validators.required, Validators.email]],
+		password: ['', [Validators.required]]
+	})
+
   constructor(
-    private accountService: ContaService,
-    private router: Router
-    ) { }
+    private contaService: ContaService,
+    private router: Router,
+    private fb: FormBuilder,
+  ) { }
 
   ngOnInit(): void {
   }
 
   async onSubmit() {
-    try{
-      const result = await this.accountService.login(this.login);
-      console.log(`Login efetuado com sucesso! ${result}`);
-
-      this.router.navigate(['/home']);
+    try {
+      const result = await this.contaService.login(this.login);
+      console.log(`Login efetuado: ${result}`)
+      this.router.navigate(['']);
     } catch (error) {
       console.error(error);
     }
   }
-
 }
