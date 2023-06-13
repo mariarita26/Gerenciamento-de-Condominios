@@ -1,6 +1,12 @@
 # Gerenciamento-de-Condominios
 Projeto (Gerenciamento de Projetos de Software)
 
+Status: Desenvolvendo
+
+![dashboard](https://github.com/mariarita26/Gerenciamento-de-Condominios/assets/89050107/05c6b46f-d60a-45e7-859e-ad03c3b05a09)
+
+![cadastro-morador](https://github.com/mariarita26/Gerenciamento-de-Condominios/assets/89050107/4282e8a0-deef-443d-8273-b314363d726b)
+
 ## 1. Justificativa do Projeto
 
 O condomínio Montanhas Azuis é um conceituado empreendimento que oferece conforto, qualidade e segurança para seus moradores. O condomínio nos procurou com o intuito de melhorar a experiência de trabalho de seus porteiros e tornar informatizado o processo de registro e administração de visitantes, de modo que os porteiros tenham acesso a uma página web e essas informações possam ser acessadas de qualquer lugar. Além do mais, desta forma, é possível garantir a segurança e a confiabilidade dos registros.
@@ -58,3 +64,17 @@ Além das informações acima, ainda precisamos registrar as seguintes informaç
     Horário em que o visitante deixou as dependências do condomínio
     Porteiro responsável pelo registro
 
+### 5. Instalação:
+
+Back-end:
+
+* Abra a pasta backend em sua IDE.
+* Configure a JDK (11 ou superior).
+* Baixe as dependencias contidas no arquivo pom.xml.
+* Execute a Aplicação. (Será executada na porta 8080)
+
+Front-end:
+
+* Abra a pasta frontend em sua IDE.
+* Baixe as dependencias contidas no arquivo package.json (Execute o comando "npm install")
+* Execute a Aplicação. (Será executada na porta 4200)
