@@ -99,5 +99,13 @@
       "data": "2023-05-23T00:50:46.496Z",
       "id": 4
     }
+  ],
+  "users": [
+    { 
+      "id": 1,
+      "name": "admin",
+      "email": "admin@gmail.com",
+      "password": "admin"
+    }
   ]
 }
