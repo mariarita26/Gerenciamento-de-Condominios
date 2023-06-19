@@ -4,6 +4,7 @@ import { Visitante } from 'app/interface/visitante';
 import { environment } from 'environments/environment';
 import { Observable, take } from 'rxjs';
 
+
 @Injectable({
   providedIn: 'root'
 })

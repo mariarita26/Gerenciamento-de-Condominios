@@ -4,6 +4,7 @@ import { Residente } from "app/interface/residente";
 import { environment } from "environments/environment";
 import { Observable } from "rxjs";
 
+
 @Injectable({
   providedIn: "root",
 })
