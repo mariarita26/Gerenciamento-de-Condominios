@@ -32,31 +32,31 @@ export class PorteiroCreateComponent implements OnInit {
   ngOnInit(): void {
     this.idPorteiro = Number(this.route.snapshot.paramMap.get('id'));
 
-    if (this.idPorteiro !== 0){
-      this.porteiroService.buscarPorteiroPorId(this.idPorteiro).subscribe((porteiro: Porteiro) => {
-        this.formulario.setValue({
-          nome: porteiro.nome,
-          cpf: porteiro.cpf,
-          telefone: porteiro.telefone,
-          endereco: porteiro.endereco,
-        });
-      }, (error) => {
-        console.log(error);
-      });
-    }
+    // if (this.idPorteiro !== 0){
+    //   this.porteiroService.buscarPorteiroPorId(this.idPorteiro).subscribe((porteiro: Porteiro) => {
+    //     this.formulario.setValue({
+    //       nome: porteiro.nome,
+    //       cpf: porteiro.cpf,
+    //       telefone: porteiro.telefone,
+    //       endereco: porteiro.endereco,
+    //     });
+    //   }, (error) => {
+    //     console.log(error);
+    //   });
+    // }
   }
 
   enviar() {
     const porteiro: Porteiro = this.formulario.value as Porteiro;
 
-    if (this.idPorteiro) {
-      porteiro.id = this.idPorteiro;
-      this.porteiroService.atualizar(porteiro).subscribe(() => {
-        this.alertaService.alertaSucesso("Porteiro atualizado");
-        this.router.navigate(['/porteiros/list']);
-      })
-      return;
-    }
+    // if (this.idPorteiro) {
+    //   porteiro.id = this.idPorteiro;
+    //   this.porteiroService.atualizar(porteiro).subscribe(() => {
+    //     this.alertaService.alertaSucesso("Porteiro atualizado");
+    //     this.router.navigate(['/porteiros/list']);
+    //   })
+    //   return;
+    // }
 
     this.porteiroService.create(porteiro).subscribe(() => {
       this.alertaService.alertaSucesso("Porteiro cadastrado");

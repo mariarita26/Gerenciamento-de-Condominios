@@ -15,7 +15,9 @@ export class ResidenteCreateComponent implements OnInit {
 
   residente: Residente[];
 
-  idResidente = 0;
+  operacaoCadastro = true;
+
+  // idResidente = 0;
   formulario = new FormGroup({
     nome: new FormControl('', Validators.required),
     cpf: new FormControl('', Validators.required),
@@ -33,10 +35,13 @@ export class ResidenteCreateComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.idResidente = Number(this.route.snapshot.paramMap.get('id'));
 
-    if (this.idResidente !== 0){
-      this.residenteService.buscarResidentePorId(this.idResidente).subscribe((residente: Residente) => {
+    if (this.route.snapshot.paramMap.has('id')) {
+      this.operacaoCadastro = false;
+
+      const idParaEdicao = this.route.snapshot.paramMap.get('id');
+
+      this.residenteService.buscarResidentePorId(idParaEdicao).subscribe((residente: Residente) => {
         this.formulario.setValue({
           nome: residente.nome,
           cpf: residente.cpf,
@@ -49,18 +54,38 @@ export class ResidenteCreateComponent implements OnInit {
       });
     }
   }
+    
+
+   
+
+    // this.idResidente = Number(this.route.snapshot.paramMap.get('id'));
+
+  //   if (this.idResidente !== 0){
+  //     this.residenteService.buscarResidentePorId(this.idResidente).subscribe((residente: Residente) => {
+  //       this.formulario.setValue({
+  //         nome: residente.nome,
+  //         cpf: residente.cpf,
+  //         telefone: residente.telefone,
+  //         endereco: residente.endereco,
+  //         bloco: residente.bloco
+  //       });
+  //     }, (error) => {
+  //       console.log(error);
+  //     });
+  //   }
+  // }
 
   enviar() {
     const residente: Residente = this.formulario.value as Residente;
 
-    if (this.idResidente) {
-      residente.id = this.idResidente;
-      this.residenteService.atualizar(residente).subscribe(() => {
-        this.alertaService.alertaSucesso("Residente atualizado");
-        this.router.navigate(['residentes/list']);
-      })
-      return;
-    }
+    // if (this.residente.id) {
+    //   residente.id = this.idResidente;
+    //   this.residenteService.atualizar(residente).subscribe(() => {
+    //     this.alertaService.alertaSucesso("Residente atualizado");
+    //     this.router.navigate(['residentes/list']);
+    //   })
+    //   return;
+    // }
 
     this.residenteService.create(residente).subscribe(() => {
       this.alertaService.alertaSucesso("Residente cadastrado");

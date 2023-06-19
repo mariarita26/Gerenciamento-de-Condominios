@@ -32,15 +32,15 @@ export class TableListComponent implements OnInit {
   }
 
   deletar(id: number) {
-    if (id) {
-      this.visitanteService.excluirVisitante(id).subscribe(() => {
-        const index = this.visitantes.findIndex( c => c.id === id);
-        if (index > -1) {
-          this.visitantes.splice(index, 1);
-        } 
-      })
-      this.alertaService.alertaSucesso("Visitante excluído com sucesso!");
-      this.listar();
-    } 
+  //   if (id) {
+  //     this.visitanteService.excluirVisitante(id).subscribe(() => {
+  //       const index = this.visitantes.findIndex( c => c.id === id);
+  //       if (index > -1) {
+  //         this.visitantes.splice(index, 1);
+  //       } 
+  //     })
+  //     this.alertaService.alertaSucesso("Visitante excluído com sucesso!");
+  //     this.listar();
+  //   } 
   } 
 }

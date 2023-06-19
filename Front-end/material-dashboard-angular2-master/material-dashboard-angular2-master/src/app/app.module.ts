@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { ResidenteModule } from './residente/residente.module';
 
+
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -18,7 +19,7 @@ import { ResidenteModule } from './residente/residente.module';
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
-    ResidenteModule
+    ResidenteModule,
   ],
   declarations: [
     AppComponent,

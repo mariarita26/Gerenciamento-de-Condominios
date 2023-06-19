@@ -47,34 +47,34 @@ export class UserProfileComponent implements OnInit {
     this.idVisitante = Number(this.route.snapshot.paramMap.get('id'));
     console.log('verificando',this.idVisitante);
 
-    if (this.idVisitante !== 0){
-      this.visitanteService.buscarVisitantePorId(this.idVisitante).subscribe((visitante: Visitante) => {
-        this.formulario.setValue({
-          nome: visitante.nome,
-          cpf: visitante.cpf,
-          telefone: visitante.telefone,
-          endereco: visitante.endereco,
-          veiculo: visitante.veiculo,
-          placa: visitante.placa
-        });
-      }, (error) => {
-        console.log(error);
-      });
-    } 
+    // if (this.idVisitante !== 0){
+    //   this.visitanteService.buscarVisitantePorId(this.idVisitante).subscribe((visitante: Visitante) => {
+    //     this.formulario.setValue({
+    //       nome: visitante.nome,
+    //       cpf: visitante.cpf,
+    //       telefone: visitante.telefone,
+    //       endereco: visitante.endereco,
+    //       veiculo: visitante.veiculo,
+    //       placa: visitante.placa
+    //     });
+    //   }, (error) => {
+    //     console.log(error);
+    //   });
+    // } 
   } 
 
   enviar() {
     const visitante: Visitante = this.formulario.value as Visitante;
 
 
-    if (this.idVisitante) {
-      visitante.id = this.idVisitante;
-      this.visitanteService.atualizar(visitante).subscribe(() => {
-        this.alertaService.alertaSucesso("Visitante atualizado");
-        this.router.navigate(['/table-list']);
-      })
-      return;
-    }
+    // if (this.idVisitante) {
+    //   visitante.id = this.idVisitante;
+    //   this.visitanteService.atualizar(visitante).subscribe(() => {
+    //     this.alertaService.alertaSucesso("Visitante atualizado");
+    //     this.router.navigate(['/table-list']);
+    //   })
+    //   return;
+    // }
 
     this.visitanteService.inserir(visitante).subscribe(() => {
       this.alertaService.alertaSucesso("Visitante cadastrado");
