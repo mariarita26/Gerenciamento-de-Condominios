@@ -9,35 +9,46 @@ import { Observable, from } from "rxjs";
   providedIn: "root",
 })
 export class ResidenteService {
-  NOME_COLECAO = "residente";
-  colecaoResidente: AngularFirestoreCollection<Residente>;
   private readonly URL_residentes = `${environment.API}/residente`;
 
-  constructor(private afs: AngularFirestore) {
-    this.colecaoResidente = afs.collection(this.NOME_COLECAO);
-  }
+  constructor(private http: HttpClient) {}
 
   getAll(): Observable<Residente[]> {
-    return this.colecaoResidente.valueChanges({ idField: "id" });
+    return this.http.get<Residente[]>(`${environment.API}/residente`);
   }
 
-  create(residente: Residente): Observable<object> {
-    delete residente.id;
-    return from(this.colecaoResidente.add(Object.assign({}, residente)));
+  create(residente: Residente): Observable<Residente> {
+    return this.http.post<Residente>(
+      `${environment.API}/residente`,
+      residente
+    );
   }
 
-  atualizar(residente: Residente): Observable<void> {
-    const id = residente.id;
-    delete residente.id;
-    return from(this.colecaoResidente.doc(id).update(Object.assign({}, residente)));
+  update(residente: Residente): Observable<Residente> {
+    const url = `${environment.API}residente/${residente.id}`;
+    return this.http.put<Residente>(url, residente);
   }
 
-  buscarResidentePorId(id: string) {
-    return this.colecaoResidente.doc(id).get
+  readById(id: number): Observable<Residente> {
+    const url = `${environment.API}residente/${id}`;
+    return this.http.get<Residente>(url);
   }
 
-  excluirResidente(id: string | undefined): Observable<void> {
-    return from(this.colecaoResidente.doc(id).delete());
+  // delete(id: number): Observable<Residente> {
+  // 	const url = `${environment.API}residentes/${id}`;
+  // 	return this.http.delete<Residente>(url);
+  // }
+
+  excluirResidente(id: number | undefined): Observable<object> {
+    return this.http.delete(`${this.URL_residentes}/${id}`);
+  }
+
+  atualizar(residente: Residente) {
+    return this.http.put(`${this.URL_residentes}/${residente.id}`, residente);
+  }
+
+  buscarResidentePorId(id: number) {
+    return this.http.get<Residente>(`${this.URL_residentes}/${id}`);
   }
 
 }

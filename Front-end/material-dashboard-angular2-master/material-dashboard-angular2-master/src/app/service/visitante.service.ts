@@ -9,34 +9,27 @@ import { Observable, from, take } from 'rxjs';
   providedIn: 'root'
 })
 export class VisitanteService {
-  NOME_COLECAO = 'visitante';
-  colecaoVisitante: AngularFirestoreCollection<Visitante>;
-
   private readonly URL_visitantes = `${environment.API}/visitante`;
 
-  constructor(private afs: AngularFirestore) {
-    this.colecaoVisitante = afs.collection(this.NOME_COLECAO);
-   }
+  constructor(private http: HttpClient) { }
 
   listar() {
-    return this.colecaoVisitante.valueChanges({idField: 'id'});
+    return this.http.get<Visitante[]>(this.URL_visitantes);
   }
 
-  atualizar(visitante: Visitante): Observable<void> {
-    const id = visitante.id
-    delete visitante.id;
-    return from(this.colecaoVisitante.doc(id).update(Object.assign({}, visitante)));  }
-
-  inserir(novoVisitante: Visitante): Observable<object> {
-    delete novoVisitante.id;
-    return from(this.colecaoVisitante.add(Object.assign({}, novoVisitante)))
+  atualizar(visitante: Visitante) {
+    return this.http.put(`${this.URL_visitantes}/${visitante.id}`, visitante);
   }
 
-  buscarVisitantePorId(id: string) {
-    return this.colecaoVisitante.doc(id).get();
+  inserir(novoVisitante: Visitante) {
+    return this.http.post<Visitante>(this.URL_visitantes, novoVisitante);
   }
 
-  excluirVisitante(id: string | undefined): Observable<void>{
-    return from(this.colecaoVisitante.doc(id).delete());
+  buscarVisitantePorId(id: number) {
+    return this.http.get<Visitante>(`${this.URL_visitantes}/${id}`);
+  }
+
+  excluirVisitante(id: number | undefined): Observable<object>{
+    return this.http.delete(`${this.URL_visitantes}/${id}`);
   }
 }

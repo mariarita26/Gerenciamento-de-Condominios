@@ -9,34 +9,27 @@ import { Observable, from } from "rxjs";
   providedIn: "root",
 })
 export class PorteiroService {
-  NOME_COLECAO = "porteiro";
-  colecaoPorteiro : AngularFirestoreCollection<Porteiro>;
   private readonly URL_porteiros = `${environment.API}/porteiro`;
 
-  constructor(private afs: AngularFirestore) {
-    this.colecaoPorteiro = afs.collection(this.NOME_COLECAO);
-  }
+  constructor(private http: HttpClient) {}
 
   getAll(): Observable<Porteiro[]> {
-    return this.colecaoPorteiro.valueChanges({idField: 'id'});
+    return this.http.get<Porteiro[]>(`${environment.API}/porteiro`);
   }
 
-  create(porteiro: Porteiro): Observable<object> {
-    delete porteiro.id;
-    return from(this.colecaoPorteiro.add(Object.assign({}, porteiro))) 
+  create(porteiro: Porteiro): Observable<Porteiro> {
+    return this.http.post<Porteiro>(`${environment.API}/porteiro`, porteiro);
   }
 
-  excluirPorteiro(id: string | undefined): Observable<void> {
-    return from(this.colecaoPorteiro.doc(id).delete());
+  excluirPorteiro(id: number | undefined): Observable<object> {
+    return this.http.delete(`${this.URL_porteiros}/${id}`);
   }
 
-  atualizar(porteiro: Porteiro): Observable<void> {
-    const id = porteiro.id
-    delete porteiro.id;
-    return from(this.colecaoPorteiro.doc(id).update(Object.assign({}, porteiro)));
+  atualizar(porteiro: Porteiro) {
+    return this.http.put(`${this.URL_porteiros}/${porteiro.id}`, porteiro);
   }
 
-  buscarPorteiroPorId(id: string) {
-    return this.colecaoPorteiro.doc(id).get();
+  buscarPorteiroPorId(id: number) {
+    return this.http.get<Porteiro>(`${this.URL_porteiros}/${id}`);
   }
 }

@@ -11,30 +11,30 @@ import { Observable, catchError, from } from 'rxjs';
   providedIn: 'root'
 })
 export class VisitaService {
-  NOME_COLECAO = 'visita';
-  colecaoVisita: AngularFirestoreCollection<Visita>;
+  private readonly URL_visitas = `${environment.API}/visita`;
 
-  private readonly URL_visitas = `${environment.API}/porteiro/visita`;
+  constructor(private http: HttpClient) { }
 
-  constructor(private afs: AngularFirestore) {
-    this.colecaoVisita = afs.collection(this.NOME_COLECAO);
+  registrarVisita(visita: Visita): Observable<any>{
+      return this.http.post<any>(this.URL_visitas, visita);
   }
 
-  registrarVisita(visita: Visita): Observable<object>{
-      delete visita.idVisita;
-      return from(this.colecaoVisita.add(Object.assign({}, visita)));
-  }
-
-  getAll(){
-    return this.colecaoVisita.valueChanges({idField: 'id'});
+  getAll(): Observable<Visita[]>{
+    return this.http.get<Visita[]>(this.URL_visitas);
   } 
 
-  getVisitasByVisitanteId(visitanteId: string) {
-    return this.colecaoVisita.doc(visitanteId).get();
+  getVisitasByVisitanteId(visitanteId: number): Observable<Visita[]> {
+    return this.http.get<Visita[]>(`${environment.API}/visitantes/${visitanteId}/visitas`)
+      .pipe(
+        catchError((error: any) => {
+          console.error('Erro ao obter visitas do visitante:', error);
+          throw error;
+        })
+      );
   }
 
-  // getVisitasPorPorteiro(idPorteiro: string): Observable<Visita[]> {
-  //   const url = `${environment.API}?porteiroId=${idPorteiro}`;
-  //   return this.http.get<Visita[]>(url);
-  // }
+  getVisitasPorPorteiro(idPorteiro: string): Observable<Visita[]> {
+    const url = `${environment.API}?porteiroId=${idPorteiro}`;
+    return this.http.get<Visita[]>(url);
+  }
 }
