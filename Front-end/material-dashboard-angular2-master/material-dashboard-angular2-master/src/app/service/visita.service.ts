@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Visita } from 'app/interface/visita';
 import { environment } from 'environments/environment';
 import { Observable, catchError, from } from 'rxjs';
